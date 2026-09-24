@@ -1,6 +1,8 @@
 # Firefly Solver Landing Page
 
-A completely independent Vite + React + TypeScript + Tailwind project for the Firefly solver landing page.
+The marketing and landing site for the Firefly solver. This is a separate, independent frontend built with Vite, React, TypeScript, and Tailwind CSS.
+
+[View the main Firefly Engine Repository](https://github.com/akshayvarma121/Firefly_)
 
 ## Setup
 
@@ -8,3 +10,7 @@ A completely independent Vite + React + TypeScript + Tailwind project for the Fi
 npm install
 npm run dev
 ```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
