@@ -15,9 +15,9 @@ function App() {
         <div className="flex-grow flex justify-between items-center px-6">
           <div className="font-bold tracking-widest text-sm">FIREFLY // V0.1.0</div>
           <nav className="hidden md:flex gap-12 text-xs font-mono tracking-[0.2em] text-text-muted">
-            <a href="#architecture" className="hover:text-signal transition-colors">ARCH</a>
-            <a href="#benchmarks" className="hover:text-signal transition-colors">DATA</a>
-            <a href="#download" className="hover:text-signal transition-colors">DEPLOY</a>
+            <a href="#architecture" className="hover:text-signal transition-colors">ARCHITECTURE</a>
+            <a href="#benchmarks" className="hover:text-signal transition-colors">BENCHMARKS</a>
+            <a href="#download" className="hover:text-signal transition-colors">DOWNLOAD</a>
           </nav>
         </div>
       </header>
@@ -47,7 +47,7 @@ function App() {
               </div>
             </div>
             <a href="#download" className="block w-full p-8 md:p-12 bg-signal text-background font-bold text-xl hover:bg-text-primary transition-colors tracking-widest flex justify-between items-center group">
-              INITIALIZE
+              DOWNLOAD FIREFLY
               <span className="font-mono transform group-hover:translate-x-4 transition-transform">---&gt;</span>
             </a>
           </div>
@@ -58,7 +58,7 @@ function App() {
           {/* Telemetry Window */}
           <div className="w-full lg:w-1/2 border-r border-border flex flex-col">
             <div className="p-4 border-b border-border flex justify-between items-center bg-panel">
-              <span className="font-mono text-xs tracking-widest text-text-muted">PROCESS // FIREFLY-CORE.EXE</span>
+              <span className="font-mono text-xs tracking-widest text-text-muted">TERMINAL OUTPUT</span>
               <div className="flex gap-2">
                 <div className="w-2 h-2 bg-border"></div>
                 <div className="w-2 h-2 bg-border"></div>
@@ -137,7 +137,7 @@ function App() {
           </div>
           <div className="w-full lg:w-2/3 flex flex-col">
             <div className="p-8 md:p-12 border-b border-border flex flex-col md:flex-row gap-8 items-start">
-              <div className="font-mono text-4xl text-border font-bold">T-01</div>
+              <div className="font-mono text-4xl text-border font-bold">01</div>
               <div>
                 <h3 className="text-2xl font-bold tracking-tight mb-2">CORE ENGINE</h3>
                 <div className="font-mono text-xs text-signal mb-4">C++20 & CUDA SM_89</div>
@@ -145,7 +145,7 @@ function App() {
               </div>
             </div>
             <div className="p-8 md:p-12 border-b border-border flex flex-col md:flex-row gap-8 items-start">
-              <div className="font-mono text-4xl text-border font-bold">T-02</div>
+              <div className="font-mono text-4xl text-border font-bold">02</div>
               <div>
                 <h3 className="text-2xl font-bold tracking-tight mb-2">API GATEWAY</h3>
                 <div className="font-mono text-xs text-trace-secondary mb-4">PYTHON & FASTAPI</div>
@@ -153,7 +153,7 @@ function App() {
               </div>
             </div>
             <div className="p-8 md:p-12 flex flex-col md:flex-row gap-8 items-start">
-              <div className="font-mono text-4xl text-border font-bold">T-03</div>
+              <div className="font-mono text-4xl text-border font-bold">03</div>
               <div>
                 <h3 className="text-2xl font-bold tracking-tight mb-2">CONTROL INTERFACE</h3>
                 <div className="font-mono text-xs text-text-primary mb-4">REACT & TAURI</div>
@@ -167,7 +167,7 @@ function App() {
         <section id="benchmarks" className="p-6 md:p-12 border-b border-border">
           <div className="max-w-7xl mx-auto py-12 md:py-24">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-border pb-6">
-              <h2 className="text-5xl md:text-7xl font-bold tracking-tighter">AUDIT</h2>
+              <h2 className="text-5xl md:text-7xl font-bold tracking-tighter">BENCHMARKS</h2>
               <p className="font-mono text-xs text-text-muted tracking-widest">GPU (PDHG) VS CPU (SIMPLEX/B&B)</p>
             </div>
             
@@ -231,8 +231,8 @@ function App() {
           
           {/* CLI */}
           <div className="w-full lg:w-1/2 p-6 md:p-12 lg:p-20 border-r border-border flex flex-col">
-            <div className="font-mono text-xs text-signal tracking-widest mb-4">OPTION 01 // ENGINEER</div>
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-12">CLI ENGINE</h2>
+            <div className="font-mono text-xs text-signal tracking-widest mb-4">COMMAND LINE INTERFACE</div>
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-12">CLI TOOL</h2>
             
             <div className="mb-12">
               <p className="font-mono text-xs tracking-widest text-text-muted mb-4">POWERSHELL INSTALL</p>
@@ -263,8 +263,8 @@ function App() {
 
           {/* APP */}
           <div className="w-full lg:w-1/2 p-6 md:p-12 lg:p-20 flex flex-col">
-            <div className="font-mono text-xs text-trace-secondary tracking-widest mb-4">OPTION 02 // EXECUTIVE</div>
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-12">DASHBOARD</h2>
+            <div className="font-mono text-xs text-trace-secondary tracking-widest mb-4">DESKTOP APPLICATION</div>
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-12">DESKTOP APP</h2>
             
             <p className="font-mono text-sm text-text-muted normal-case leading-relaxed mb-12">
               A standalone Tauri executable providing a highly polished, instrument-panel-styled interface. Perfect for demonstrations and deep-dive architectural analysis.
@@ -310,9 +310,9 @@ function App() {
             <div className="w-1/2 p-12 border-r border-border">
               <div className="font-mono text-xs tracking-widest text-text-primary mb-8 border-b border-border pb-4">QUICK LINKS</div>
               <div className="flex flex-col gap-4 font-bold text-sm tracking-widest">
-                <a href="#architecture" className="hover:text-signal transition-colors">ARCH</a>
-                <a href="#benchmarks" className="hover:text-signal transition-colors">DATA</a>
-                <a href="#download" className="hover:text-signal transition-colors">DEPLOY</a>
+                <a href="#architecture" className="hover:text-signal transition-colors">ARCHITECTURE</a>
+                <a href="#benchmarks" className="hover:text-signal transition-colors">BENCHMARKS</a>
+                <a href="#download" className="hover:text-signal transition-colors">DOWNLOAD</a>
               </div>
             </div>
             <div className="w-1/2 p-12">
@@ -325,8 +325,8 @@ function App() {
             </div>
           </div>
           <div className="p-6 bg-signal text-background font-bold flex justify-between items-center text-sm tracking-widest">
-            <span>STATUS: ONLINE</span>
-            <span>V0.1.0</span>
+            <span>SYSTEM OPERATIONAL</span>
+            <span>VERSION 0.1.0</span>
           </div>
         </div>
       </footer>
