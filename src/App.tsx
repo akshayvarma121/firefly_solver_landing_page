@@ -37,14 +37,14 @@ function App() {
           </div>
           
           <div className="relative z-10 w-full max-w-6xl px-6 md:px-12">
-            <div className="opacity-0 animate-fade-in-up delay-100 mb-12">
+            <div className="animate-fade-in-up animation-delay-100 mb-12">
               <span className="inline-flex items-center gap-3 px-4 py-1.5 border border-border text-text-muted font-mono text-xs tracking-widest bg-panel">
                 <span className="w-1.5 h-1.5 bg-signal animate-pulse-slow"></span>
                 SYSTEM ONLINE // CUDA SM_89 READY
               </span>
             </div>
             
-            <h1 className="opacity-0 animate-fade-in-up delay-200 text-6xl md:text-[9rem] font-bold mb-6 text-text-primary tracking-tighter uppercase leading-none">
+            <h1 className="animate-fade-in-up animation-delay-200 text-6xl md:text-[9rem] font-bold mb-6 text-text-primary tracking-tighter uppercase leading-none">
               <span className="text-signal relative inline-block group">
                 FIREFLY
                 <span className="absolute -bottom-2 left-0 w-full h-1 bg-signal transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
@@ -52,17 +52,17 @@ function App() {
               <br/>SOLVER
             </h1>
             
-            <p className="opacity-0 animate-fade-in-up delay-300 text-2xl md:text-3xl text-text-muted mb-16 max-w-4xl mx-auto font-light tracking-wide">
+            <p className="animate-fade-in-up animation-delay-300 text-2xl md:text-3xl text-text-muted mb-16 max-w-4xl mx-auto font-light tracking-wide">
               Indigenous GPU-Accelerated Optimization
             </p>
             
-            <div className="opacity-0 animate-fade-in-up delay-400 flex justify-center mb-20">
+            <div className="animate-fade-in-up animation-delay-400 flex justify-center mb-20">
               <p className="text-lg md:text-xl text-text-muted max-w-2xl border-l-2 border-signal pl-8 text-left leading-relaxed relative before:absolute before:left-[-2px] before:top-0 before:w-0.5 before:h-8 before:bg-signal">
                 A sovereign, inspectable alternative to commercial solvers—built entirely from mathematical first principles and accelerated on the GPU.
               </p>
             </div>
             
-            <div className="opacity-0 animate-fade-in-up delay-500 flex flex-col sm:flex-row justify-center gap-6">
+            <div className="animate-fade-in-up animation-delay-500 flex flex-col sm:flex-row justify-center gap-6">
               <a href="#download" className="px-10 py-5 bg-signal text-background font-bold text-sm hover:bg-opacity-90 transition-all hover:shadow-[0_0_20px_rgba(232,163,61,0.2)] uppercase tracking-[0.2em]">
                 Initialize System
               </a>
