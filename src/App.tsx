@@ -342,35 +342,115 @@ function App() {
           </div>
         </section>
 
-        {/* Download / CTA Section */}
+        {/* Deploy Section */}
         <section id="download" className="py-40 px-6 md:px-12 bg-panel relative overflow-hidden">
           <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-signal to-transparent opacity-20"></div>
           
-          <div className="max-w-4xl mx-auto text-center relative z-10">
-            <h2 className="text-5xl md:text-7xl font-bold mb-8 text-text-primary uppercase tracking-tighter">Deploy <span className="text-signal">Firefly</span></h2>
-            <p className="text-text-muted text-xl mb-16 max-w-2xl mx-auto font-light leading-relaxed">
-              Available as a standalone executable, a Python package via pip, or a full Tauri desktop telemetry client.
-            </p>
+          <div className="max-w-6xl mx-auto relative z-10">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-7xl font-bold mb-6 text-text-primary uppercase tracking-tighter">Deploy <span className="text-signal">Firefly</span></h2>
+              <p className="text-text-muted text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                Choose your environment. Run Firefly directly in your terminal as a lightweight CLI, or visualize convergence in real-time with the full Desktop Dashboard.
+              </p>
+            </div>
             
-            <div className="inline-block bg-background border border-border p-8 mb-16 text-left max-w-2xl w-full shadow-2xl relative group">
-              <div className="absolute top-0 left-0 w-full h-1 bg-signal transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-              <div className="text-xs font-mono text-text-muted mb-4 uppercase tracking-widest">Windows PowerShell / Quick Install</div>
-              <div className="flex items-center gap-4">
-                <span className="text-text-muted font-mono select-none">&gt;</span>
-                <code className="text-signal font-mono text-lg break-all">
-                  irm https://bit.ly/install-firefly | iex
-                </code>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              
+              {/* Option 1: CLI */}
+              <div className="bg-background border border-border p-8 md:p-12 group hover:border-signal/50 transition-colors duration-500 relative flex flex-col h-full">
+                <div className="absolute top-0 left-0 w-full h-1 bg-signal transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                <div className="text-xs font-mono text-signal mb-4 uppercase tracking-widest">Option 1 // Engineer</div>
+                <h3 className="text-3xl font-bold text-text-primary mb-6 uppercase tracking-tight">The CLI Engine</h3>
+                
+                <div className="flex-grow">
+                  <div className="mb-6">
+                    <div className="text-xs font-mono text-text-muted mb-2 uppercase">1. One-Line Install (Windows PowerShell)</div>
+                    <div className="bg-panel border border-border p-4 flex justify-between items-center group/copy cursor-pointer hover:border-signal/50 transition-colors"
+                         onClick={() => navigator.clipboard.writeText('irm https://bit.ly/install-firefly | iex')}
+                         title="Click to copy">
+                      <code className="text-signal font-mono text-sm break-all">
+                        irm https://bit.ly/install-firefly | iex
+                      </code>
+                      <svg className="w-5 h-5 text-text-muted group-hover/copy:text-signal transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <div className="text-xs font-mono text-text-muted mb-2 uppercase">2. Command Reference</div>
+                    <pre className="bg-panel border border-border p-6 overflow-x-auto text-[11px] md:text-xs font-mono leading-[2.5] text-text-muted">
+                      <span className="text-text-primary font-bold">▶ CORE COMMANDS</span><br/>
+                      <span className="text-signal">firefly solve</span> &lt;file.mps&gt;      <span className="opacity-50">Solve a single LP/MILP/QP</span><br/>
+                      <span className="text-signal">firefly solve-batch</span> &lt;dir&gt;       <span className="opacity-50">Solve all .mps files in a dir</span><br/>
+                      <br/>
+                      <span className="text-text-primary font-bold">▶ TESTING & BENCHMARKING</span><br/>
+                      <span className="text-signal">firefly benchmark</span> &lt;dir&gt;         <span className="opacity-50">Compare vs known optimums</span><br/>
+                      <span className="text-signal">firefly test-standard</span>           <span className="opacity-50">Run Netlib standard problems</span><br/>
+                      <span className="text-signal">firefly test</span>                    <span className="opacity-50">Run C++ core test suite</span><br/>
+                      <br/>
+                      <span className="text-text-primary font-bold">▶ UTILITIES</span><br/>
+                      <span className="text-signal">firefly update</span>                  <span className="opacity-50">Auto-update executable</span><br/>
+                      <span className="text-signal">firefly home</span>                    <span className="opacity-50">Open this beautiful homepage</span><br/>
+                    </pre>
+                  </div>
+                </div>
               </div>
+
+              {/* Option 2: Desktop App */}
+              <div className="bg-background border border-border p-8 md:p-12 group hover:border-trace-secondary/50 transition-colors duration-500 relative flex flex-col h-full">
+                <div className="absolute top-0 left-0 w-full h-1 bg-trace-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                <div className="text-xs font-mono text-trace-secondary mb-4 uppercase tracking-widest">Option 2 // Executive</div>
+                <h3 className="text-3xl font-bold text-text-primary mb-6 uppercase tracking-tight">The Desktop Dashboard</h3>
+                
+                <div className="flex-grow flex flex-col justify-between">
+                  <div>
+                    <p className="text-text-muted text-lg leading-relaxed mb-6">
+                      A standalone Tauri executable providing a highly polished, instrument-panel-styled interface. Perfect for demonstrations and deep-dive architectural analysis.
+                    </p>
+                    
+                    <ul className="space-y-4 mb-8">
+                      <li className="flex items-start gap-3">
+                        <div className="w-1.5 h-1.5 bg-trace-secondary mt-2"></div>
+                        <span className="text-text-muted">Live convergence telemetry and dual objective tracing.</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <div className="w-1.5 h-1.5 bg-trace-secondary mt-2"></div>
+                        <span className="text-text-muted">Automated benchmarking tables directly in the UI.</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <div className="w-1.5 h-1.5 bg-trace-secondary mt-2"></div>
+                        <span className="text-text-muted">Interactive step-through narrative explaining the math.</span>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="mt-8">
+                    <a href="https://github.com/akshayvarma121/Firefly_solver/releases" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-3 w-full px-8 py-5 bg-trace-secondary text-background font-bold text-sm hover:bg-opacity-90 transition-opacity uppercase tracking-[0.2em]">
+                      Download Executable
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <button className="px-12 py-5 bg-signal text-background font-bold text-sm hover:bg-text-primary transition-colors uppercase tracking-[0.2em]">
-                Download Binaries
-              </button>
-              <button className="px-12 py-5 bg-transparent border border-border text-text-primary font-bold text-sm hover:border-signal transition-colors uppercase tracking-[0.2em]">
-                Read Documentation
-              </button>
+            {/* Links Block */}
+            <div className="mt-20 pt-10 border-t border-border flex flex-col sm:flex-row justify-center items-center gap-6 text-sm font-mono tracking-widest uppercase">
+              <a href="https://github.com/akshayvarma121/Firefly_solver" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-text-muted hover:text-signal transition-colors">
+                <div className="w-1.5 h-1.5 bg-border"></div>
+                GitHub Repository
+              </a>
+              <span className="hidden sm:inline text-border">|</span>
+              <a href="https://firefly-solver.vercel.app" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-text-muted hover:text-signal transition-colors">
+                <div className="w-1.5 h-1.5 bg-border"></div>
+                Official Website
+              </a>
             </div>
+            
           </div>
         </section>
       </main>
