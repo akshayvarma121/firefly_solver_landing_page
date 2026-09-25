@@ -47,7 +47,7 @@ function App() {
           {/* Flat Watermark Logo */}
           <div className="absolute right-[-10vw] top-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[1000px] bg-border opacity-20 pointer-events-none" style={{ maskImage: 'url(/logo.png)', WebkitMaskImage: 'url(/logo.png)', maskSize: 'contain', maskRepeat: 'no-repeat', maskPosition: 'center' }}></div>
 
-          <div className="w-full md:w-3/5 border-r border-border flex flex-col justify-end p-6 md:p-12 md:pb-24 z-10">
+          <div className="w-full md:w-3/5 border-r border-border flex flex-col justify-end p-8 md:p-16 md:pb-32 z-10">
             <h1 className="text-7xl md:text-[11vw] font-bold tracking-tighter leading-[0.85] mb-6 uppercase">
               FIREFLY
               <br />
@@ -56,7 +56,7 @@ function App() {
           </div>
           
           <div className="w-full md:w-2/5 flex flex-col z-10 bg-background/50 backdrop-blur-sm">
-            <div className="flex-grow p-6 md:p-12 border-b border-border flex items-end">
+            <div className="flex-grow p-8 md:p-16 border-b border-border flex items-end">
               <div>
                 <div className="w-3 h-3 bg-signal mb-6"></div>
                 <p className="text-lg md:text-xl leading-relaxed text-text-muted font-light">
@@ -64,14 +64,12 @@ function App() {
                 </p>
               </div>
             </div>
-            <a href="#download" className="block w-full p-8 md:p-12 bg-signal text-background font-bold text-xl hover:bg-text-primary transition-colors tracking-widest flex justify-between items-center group uppercase">
+            <a href="#download" className="block w-full p-8 md:p-16 bg-signal text-background font-bold text-2xl hover:bg-text-primary transition-colors tracking-widest flex justify-between items-center group uppercase">
               GET STARTED
               <span className="font-mono transform group-hover:translate-x-4 transition-transform">---&gt;</span>
             </a>
           </div>
         </section>
-
-
 
         {/* TELEMETRY & PHILOSOPHY - Split Screen */}
         <section className="flex flex-col lg:flex-row border-b border-border">
@@ -85,7 +83,7 @@ function App() {
                 <div className="w-2 h-2 bg-signal animate-pulse-slow"></div>
               </div>
             </div>
-            <div className="flex-grow p-6 md:p-12 bg-background overflow-x-auto">
+            <div className="flex-grow p-8 md:p-16 bg-background overflow-x-auto">
               <pre className="font-mono text-xs md:text-sm leading-[2.5] text-text-muted">
                 <span className="text-signal font-bold">$ firefly solve</span> data/model.mps --method auto --gpu<br/>
                 <br/>
@@ -108,37 +106,37 @@ function App() {
 
           {/* Philosophy list */}
           <div className="w-full lg:w-1/2 flex flex-col bg-panel">
-            <div className="p-6 md:p-12 border-b border-border">
+            <div className="p-8 md:p-16 border-b border-border">
               <h2 className="text-4xl md:text-6xl font-bold tracking-tighter uppercase">Transparent by Design</h2>
             </div>
             
-            <div className="flex-grow flex flex-col py-6">
-              <div className="flex-1 px-8 md:px-16 py-8 border-b border-border/50 flex items-start gap-8 hover:bg-background transition-colors group">
-                <div className="font-mono text-signal font-bold text-xl">01</div>
+            <div className="flex-grow flex flex-col py-8">
+              <div className="flex-1 px-8 md:px-16 py-10 border-b border-border/50 flex items-start gap-8 hover:bg-background transition-colors group">
+                <div className="font-mono text-signal font-bold text-2xl">01</div>
                 <div>
-                  <h3 className="text-2xl font-bold tracking-tight mb-3 uppercase">Clear Logic</h3>
-                  <p className="text-sm md:text-base text-text-muted leading-relaxed font-light">Every step is clear and testable. There is no hidden logic or secret algorithms—you can see exactly how your problem is being solved.</p>
+                  <h3 className="text-3xl font-bold tracking-tight mb-4 uppercase">Clear Logic</h3>
+                  <p className="text-base text-text-muted leading-relaxed font-light">Every step is clear and testable. There is no hidden logic or secret algorithms—you can see exactly how your problem is being solved.</p>
                 </div>
               </div>
-              <div className="flex-1 px-8 md:px-16 py-8 border-b border-border/50 flex items-start gap-8 hover:bg-background transition-colors group">
-                <div className="font-mono text-signal font-bold text-xl">02</div>
+              <div className="flex-1 px-8 md:px-16 py-10 border-b border-border/50 flex items-start gap-8 hover:bg-background transition-colors group">
+                <div className="font-mono text-signal font-bold text-2xl">02</div>
                 <div>
-                  <h3 className="text-2xl font-bold tracking-tight mb-3 uppercase">Honest Results</h3>
-                  <p className="text-sm md:text-base text-text-muted leading-relaxed font-light">We don't hide our results. Our benchmarks clearly show where Firefly excels and where traditional CPU solvers still win.</p>
+                  <h3 className="text-3xl font-bold tracking-tight mb-4 uppercase">Honest Results</h3>
+                  <p className="text-base text-text-muted leading-relaxed font-light">We don't hide our results. Our benchmarks clearly show where Firefly excels and where traditional CPU solvers still win.</p>
                 </div>
               </div>
-              <div className="flex-1 px-8 md:px-16 py-8 border-b border-border/50 flex items-start gap-8 hover:bg-background transition-colors group">
-                <div className="font-mono text-signal font-bold text-xl">03</div>
+              <div className="flex-1 px-8 md:px-16 py-10 border-b border-border/50 flex items-start gap-8 hover:bg-background transition-colors group">
+                <div className="font-mono text-signal font-bold text-2xl">03</div>
                 <div>
-                  <h3 className="text-2xl font-bold tracking-tight mb-3 uppercase">Self-Verifying</h3>
-                  <p className="text-sm md:text-base text-text-muted leading-relaxed font-light">Every single run checks its own work. We rigorously verify the math against your primal and dual constraints to guarantee accuracy.</p>
+                  <h3 className="text-3xl font-bold tracking-tight mb-4 uppercase">Self-Verifying</h3>
+                  <p className="text-base text-text-muted leading-relaxed font-light">Every single run checks its own work. We rigorously verify the math against your primal and dual constraints to guarantee accuracy.</p>
                 </div>
               </div>
-              <div className="flex-1 px-8 md:px-16 py-8 flex items-start gap-8 hover:bg-background transition-colors group">
-                <div className="font-mono text-signal font-bold text-xl">04</div>
+              <div className="flex-1 px-8 md:px-16 py-10 flex items-start gap-8 hover:bg-background transition-colors group">
+                <div className="font-mono text-signal font-bold text-2xl">04</div>
                 <div>
-                  <h3 className="text-2xl font-bold tracking-tight mb-3 uppercase">Easy to Extend</h3>
-                  <p className="text-sm md:text-base text-text-muted leading-relaxed font-light">Built with a clean three-tier architecture, making it incredibly easy to add new features or integrate with your existing tools.</p>
+                  <h3 className="text-3xl font-bold tracking-tight mb-4 uppercase">Easy to Extend</h3>
+                  <p className="text-base text-text-muted leading-relaxed font-light">Built with a clean three-tier architecture, making it incredibly easy to add new features or integrate with your existing tools.</p>
                 </div>
               </div>
             </div>
@@ -147,15 +145,15 @@ function App() {
 
         {/* THE MATH PIPELINE (New Architecture) */}
         <section className="border-b border-border flex flex-col bg-background">
-          <div className="w-full p-8 md:p-12 lg:p-20 border-b border-border flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+          <div className="w-full p-8 md:p-16 lg:px-24 lg:pt-24 lg:pb-12 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.85] uppercase">
               The Math Pipeline
             </h2>
-            <div className="text-base leading-relaxed font-light text-text-muted max-w-lg">
+            <div className="text-lg leading-relaxed font-light text-text-muted max-w-lg">
               From raw MPS constraints to guaranteed optimality. The entire execution path is strictly engineered for massive parallelization.
             </div>
           </div>
-          <div className="w-full p-8 md:p-12 lg:p-20 bg-panel">
+          <div className="w-full px-8 md:px-16 lg:px-24 pb-16 lg:pb-24 pt-4 bg-background">
             <div className="w-full flex flex-col xl:flex-row items-center gap-4 xl:gap-8">
               {/* Node 1 */}
               <div className="flex-1 w-full border border-signal bg-background flex flex-col shadow-lg shadow-black/20 hover:-translate-y-1 transition-transform">
@@ -218,97 +216,97 @@ function App() {
 
         {/* ARCHITECTURE */}
         <section id="architecture" className="border-b border-border flex flex-col lg:flex-row">
-          <div className="w-full lg:w-1/3 p-6 md:p-12 border-r border-border bg-signal text-background flex flex-col justify-between">
+          <div className="w-full lg:w-1/3 p-8 md:p-16 lg:p-24 border-r border-border bg-signal text-background flex flex-col justify-between">
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.85] mb-12 uppercase">
               Built for Graphics Cards
             </h2>
-            <div className="text-lg leading-relaxed font-medium">
+            <div className="text-xl leading-relaxed font-medium">
               We designed Firefly specifically for GPUs. By replacing traditional, slow sequential math with modern parallel algorithms, we can solve massive problems significantly faster.
             </div>
           </div>
-          <div className="w-full lg:w-2/3 flex flex-col py-8 lg:py-16">
-            <div className="px-8 md:px-16 py-8 border-b border-border/50 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-              <div className="font-mono text-4xl text-border font-bold">01</div>
+          <div className="w-full lg:w-2/3 flex flex-col py-12 lg:py-24">
+            <div className="px-8 md:px-16 lg:px-24 py-10 border-b border-border/50 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+              <div className="font-mono text-5xl text-border font-bold">01</div>
               <div>
-                <h3 className="text-2xl font-bold tracking-tight mb-2 uppercase">Core Engine</h3>
-                <div className="font-mono text-xs tracking-widest uppercase text-signal mb-4">C++20 & CUDA</div>
-                <p className="text-text-muted leading-relaxed max-w-xl font-light">The absolute heart of Firefly. It reads your files, simplifies the math, and runs our high-speed parallel solver directly on your graphics card.</p>
+                <h3 className="text-3xl font-bold tracking-tight mb-2 uppercase">Core Engine</h3>
+                <div className="font-mono text-sm tracking-widest uppercase text-signal mb-6">C++20 & CUDA</div>
+                <p className="text-lg text-text-muted leading-relaxed max-w-xl font-light">The absolute heart of Firefly. It reads your files, simplifies the math, and runs our high-speed parallel solver directly on your graphics card.</p>
               </div>
             </div>
-            <div className="px-8 md:px-16 py-8 border-b border-border/50 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-              <div className="font-mono text-4xl text-border font-bold">02</div>
+            <div className="px-8 md:px-16 lg:px-24 py-10 border-b border-border/50 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+              <div className="font-mono text-5xl text-border font-bold">02</div>
               <div>
-                <h3 className="text-2xl font-bold tracking-tight mb-2 uppercase">API Gateway</h3>
-                <div className="font-mono text-xs tracking-widest uppercase text-trace-secondary mb-4">PYTHON & FASTAPI</div>
-                <p className="text-text-muted leading-relaxed max-w-xl font-light">The bridge that connects the engine to the outside world. It provides clean endpoints and live streaming data so you can monitor the solver in real-time.</p>
+                <h3 className="text-3xl font-bold tracking-tight mb-2 uppercase">API Gateway</h3>
+                <div className="font-mono text-sm tracking-widest uppercase text-trace-secondary mb-6">PYTHON & FASTAPI</div>
+                <p className="text-lg text-text-muted leading-relaxed max-w-xl font-light">The bridge that connects the engine to the outside world. It provides clean endpoints and live streaming data so you can monitor the solver in real-time.</p>
               </div>
             </div>
-            <div className="px-8 md:px-16 py-8 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-              <div className="font-mono text-4xl text-border font-bold">03</div>
+            <div className="px-8 md:px-16 lg:px-24 py-10 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+              <div className="font-mono text-5xl text-border font-bold">03</div>
               <div>
-                <h3 className="text-2xl font-bold tracking-tight mb-2 uppercase">Desktop App</h3>
-                <div className="font-mono text-xs tracking-widest uppercase text-text-primary mb-4">REACT & TAURI</div>
-                <p className="text-text-muted leading-relaxed max-w-xl font-light">A beautiful, easy-to-use application that runs on your computer. It gives you live charts, performance stats, and a clear breakdown of exactly what the solver is doing.</p>
+                <h3 className="text-3xl font-bold tracking-tight mb-2 uppercase">Desktop App</h3>
+                <div className="font-mono text-sm tracking-widest uppercase text-text-primary mb-6">REACT & TAURI</div>
+                <p className="text-lg text-text-muted leading-relaxed max-w-xl font-light">A beautiful, easy-to-use application that runs on your computer. It gives you live charts, performance stats, and a clear breakdown of exactly what the solver is doing.</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* BENCHMARKS */}
-        <section id="benchmarks" className="p-6 md:p-12 border-b border-border">
+        <section id="benchmarks" className="p-8 md:p-16 lg:p-24 border-b border-border">
           <div className="max-w-7xl mx-auto py-12 md:py-24">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-border pb-6">
-              <h2 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase">Benchmarks</h2>
-              <p className="font-mono text-xs text-text-muted tracking-widest uppercase">GPU vs CPU Performance</p>
+            <div className="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-border pb-8">
+              <h2 className="text-6xl md:text-8xl font-bold tracking-tighter uppercase">Benchmarks</h2>
+              <p className="font-mono text-sm text-text-muted tracking-widest uppercase">GPU vs CPU Performance</p>
             </div>
             
-            <div className="space-y-12">
+            <div className="space-y-16">
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 <div className="w-full md:w-1/4">
-                  <h3 className="text-2xl font-bold uppercase">AFIRO.MPS</h3>
-                  <p className="font-mono text-xs text-text-muted uppercase">NETLIB LP</p>
+                  <h3 className="text-3xl font-bold uppercase mb-2">AFIRO.MPS</h3>
+                  <p className="font-mono text-sm text-text-muted uppercase">NETLIB LP</p>
                 </div>
-                <div className="w-full md:w-3/4 space-y-2 font-mono text-xs uppercase">
-                  <div className="flex items-center gap-4">
-                    <div className="w-[10%] h-12 bg-signal flex items-center px-4 text-background font-bold">0.12s</div>
+                <div className="w-full md:w-3/4 space-y-4 font-mono text-sm uppercase">
+                  <div className="flex items-center gap-6">
+                    <div className="w-[10%] h-14 bg-signal flex items-center px-4 text-background font-bold">0.12s</div>
                     <span className="text-signal tracking-widest">GPU</span>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <div className="w-[35%] h-12 bg-panel border border-border flex items-center px-4">0.45s</div>
+                  <div className="flex items-center gap-6">
+                    <div className="w-[35%] h-14 bg-panel border border-border flex items-center px-4">0.45s</div>
                     <span className="text-text-muted tracking-widest">CPU</span>
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-col md:flex-row gap-8 items-center pt-12 border-t border-border/50">
+              <div className="flex flex-col md:flex-row gap-8 items-center pt-16 border-t border-border/50">
                 <div className="w-full md:w-1/4">
-                  <h3 className="text-2xl font-bold uppercase">EGOUT.MPS</h3>
-                  <p className="font-mono text-xs text-text-muted uppercase">NETLIB LP</p>
+                  <h3 className="text-3xl font-bold uppercase mb-2">EGOUT.MPS</h3>
+                  <p className="font-mono text-sm text-text-muted uppercase">NETLIB LP</p>
                 </div>
-                <div className="w-full md:w-3/4 space-y-2 font-mono text-xs uppercase">
-                  <div className="flex items-center gap-4">
-                    <div className="w-[20%] h-12 bg-signal flex items-center px-4 text-background font-bold">0.80s</div>
+                <div className="w-full md:w-3/4 space-y-4 font-mono text-sm uppercase">
+                  <div className="flex items-center gap-6">
+                    <div className="w-[20%] h-14 bg-signal flex items-center px-4 text-background font-bold">0.80s</div>
                     <span className="text-signal tracking-widest">GPU</span>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <div className="w-[80%] h-12 bg-panel border border-border flex items-center px-4">3.20s</div>
+                  <div className="flex items-center gap-6">
+                    <div className="w-[80%] h-14 bg-panel border border-border flex items-center px-4">3.20s</div>
                     <span className="text-text-muted tracking-widest">CPU</span>
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-col md:flex-row gap-8 items-center pt-12 border-t border-border/50">
+              <div className="flex flex-col md:flex-row gap-8 items-center pt-16 border-t border-border/50">
                 <div className="w-full md:w-1/4">
-                  <h3 className="text-2xl font-bold uppercase">FLUGPL.MPS</h3>
-                  <p className="font-mono text-xs text-text-muted uppercase">MIPLIB</p>
+                  <h3 className="text-3xl font-bold uppercase mb-2">FLUGPL.MPS</h3>
+                  <p className="font-mono text-sm text-text-muted uppercase">MIPLIB</p>
                 </div>
-                <div className="w-full md:w-3/4 space-y-2 font-mono text-xs uppercase">
-                  <div className="flex items-center gap-4">
-                    <div className="w-[15%] h-12 bg-trace-secondary flex items-center px-4 text-background font-bold">4.50s</div>
+                <div className="w-full md:w-3/4 space-y-4 font-mono text-sm uppercase">
+                  <div className="flex items-center gap-6">
+                    <div className="w-[15%] h-14 bg-trace-secondary flex items-center px-4 text-background font-bold">4.50s</div>
                     <span className="text-trace-secondary tracking-widest">GPU</span>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <div className="w-full h-12 bg-panel border border-border flex items-center px-4">28.30s</div>
+                  <div className="flex items-center gap-6">
+                    <div className="w-full h-14 bg-panel border border-border flex items-center px-4">28.30s</div>
                     <span className="text-text-muted tracking-widest">CPU</span>
                   </div>
                 </div>
@@ -321,15 +319,15 @@ function App() {
         <section id="download" className="flex flex-col lg:flex-row border-b border-border bg-panel">
           
           {/* CLI */}
-          <div className="w-full lg:w-1/2 p-6 md:p-12 lg:p-20 border-r border-border flex flex-col">
-            <div className="font-mono text-xs text-signal tracking-widest mb-4 uppercase">Command Line Interface</div>
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-12 uppercase">CLI Tool</h2>
+          <div className="w-full lg:w-1/2 p-12 md:p-16 lg:p-32 border-r border-border flex flex-col">
+            <div className="font-mono text-sm text-signal tracking-widest mb-6 uppercase">Command Line Interface</div>
+            <h2 className="text-6xl md:text-8xl font-bold tracking-tighter mb-16 uppercase">CLI Tool</h2>
             
-            <div className="mb-12">
-              <p className="font-mono text-xs tracking-widest text-text-muted mb-4 uppercase">Quick Install</p>
-              <div className="bg-background border border-border p-4 flex justify-between items-center cursor-pointer hover:border-signal transition-colors group"
+            <div className="mb-16">
+              <p className="font-mono text-sm tracking-widest text-text-muted mb-6 uppercase">Quick Install</p>
+              <div className="bg-background border border-border p-6 flex justify-between items-center cursor-pointer hover:border-signal transition-colors group"
                    onClick={handleCopy}>
-                <code className="text-signal font-mono text-sm">irm https://bit.ly/install-firefly | iex</code>
+                <code className="text-signal font-mono text-sm md:text-base">irm https://bit.ly/install-firefly | iex</code>
                 <span className={`font-mono text-xs font-bold uppercase transition-colors ${copied ? 'text-signal' : 'text-text-muted group-hover:text-text-primary'}`}>
                   {copied ? 'COPIED!' : 'COPY'}
                 </span>
@@ -337,8 +335,8 @@ function App() {
             </div>
 
             <div className="flex-grow">
-              <p className="font-mono text-xs tracking-widest text-text-muted mb-4 uppercase">Command Reference</p>
-              <pre className="bg-background border border-border p-6 overflow-x-auto text-[10px] md:text-xs font-mono leading-[2.5] text-text-muted">
+              <p className="font-mono text-sm tracking-widest text-text-muted mb-6 uppercase">Command Reference</p>
+              <pre className="bg-background border border-border p-8 overflow-x-auto text-xs md:text-sm font-mono leading-[2.5] text-text-muted">
                 <span className="text-text-primary font-bold">▶ CORE COMMANDS</span><br/>
                 <span className="text-signal">firefly solve</span> &lt;file.mps&gt;      <span className="opacity-50">Solve single problem</span><br/>
                 <span className="text-signal">firefly solve-batch</span> &lt;dir&gt;       <span className="opacity-50">Solve directory</span><br/>
@@ -355,30 +353,30 @@ function App() {
           </div>
 
           {/* APP */}
-          <div className="w-full lg:w-1/2 p-6 md:p-12 lg:p-20 flex flex-col">
-            <div className="font-mono text-xs text-trace-secondary tracking-widest mb-4 uppercase">Desktop Interface</div>
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-12 uppercase">Desktop App</h2>
+          <div className="w-full lg:w-1/2 p-12 md:p-16 lg:p-32 flex flex-col">
+            <div className="font-mono text-sm text-trace-secondary tracking-widest mb-6 uppercase">Desktop Interface</div>
+            <h2 className="text-6xl md:text-8xl font-bold tracking-tighter mb-16 uppercase">Desktop App</h2>
             
-            <p className="text-lg text-text-muted leading-relaxed mb-12 font-light">
+            <p className="text-xl md:text-2xl text-text-muted leading-relaxed mb-16 font-light">
               A beautiful, standalone application that gives you a complete visual dashboard. Perfect for testing, learning, and deeply analyzing how your models are solved.
             </p>
             
-            <div className="space-y-4 mb-12 flex-grow">
-              <div className="p-5 border border-border bg-background flex gap-4 items-center text-sm font-light text-text-muted">
-                <div className="w-2 h-2 bg-trace-secondary rounded-full"></div>
+            <div className="space-y-6 mb-16 flex-grow">
+              <div className="p-6 md:p-8 border border-border bg-background flex gap-6 items-center text-base md:text-lg font-light text-text-muted">
+                <div className="w-3 h-3 bg-trace-secondary rounded-full"></div>
                 Live convergence telemetry & tracing
               </div>
-              <div className="p-5 border border-border bg-background flex gap-4 items-center text-sm font-light text-text-muted">
-                <div className="w-2 h-2 bg-trace-secondary rounded-full"></div>
+              <div className="p-6 md:p-8 border border-border bg-background flex gap-6 items-center text-base md:text-lg font-light text-text-muted">
+                <div className="w-3 h-3 bg-trace-secondary rounded-full"></div>
                 Automated benchmarking tables
               </div>
-              <div className="p-5 border border-border bg-background flex gap-4 items-center text-sm font-light text-text-muted">
-                <div className="w-2 h-2 bg-trace-secondary rounded-full"></div>
+              <div className="p-6 md:p-8 border border-border bg-background flex gap-6 items-center text-base md:text-lg font-light text-text-muted">
+                <div className="w-3 h-3 bg-trace-secondary rounded-full"></div>
                 Interactive step-through narrative
               </div>
             </div>
             
-            <a href="https://github.com/akshayvarma121/Firefly_solver/releases" target="_blank" rel="noreferrer" className="block text-center w-full px-8 py-5 border border-trace-secondary text-trace-secondary hover:bg-trace-secondary hover:text-background font-bold text-sm transition-colors tracking-widest uppercase">
+            <a href="https://github.com/akshayvarma121/Firefly_solver/releases" target="_blank" rel="noreferrer" className="block text-center w-full px-8 py-6 border border-trace-secondary text-trace-secondary hover:bg-trace-secondary hover:text-background font-bold text-base md:text-lg transition-colors tracking-widest uppercase">
               Download Executable
             </a>
           </div>
