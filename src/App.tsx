@@ -440,17 +440,17 @@ function App() {
               <button onClick={() => setShowModal(false)} className="text-text-muted hover:text-signal font-mono text-2xl">&times;</button>
             </div>
             <div className="p-8 flex flex-col gap-4">
-              <a href="https://github.com/akshayvarma121/Firefly_solver/releases" target="_blank" rel="noreferrer" className="w-full p-6 border border-border bg-background hover:border-trace-secondary hover:text-trace-secondary transition-colors group flex justify-between items-center">
+              <a href="https://github.com/akshayvarma121/Firefly_solver/releases/download/v0.2.0/firefly.exe" className="w-full p-6 border border-border bg-background hover:border-trace-secondary hover:text-trace-secondary transition-colors group flex justify-between items-center">
                 <div>
                   <div className="font-bold uppercase tracking-widest text-lg mb-1 group-hover:text-trace-secondary transition-colors">Windows</div>
                   <div className="font-mono text-xs text-text-muted uppercase">64-bit / .exe</div>
                 </div>
                 <div className="font-mono text-border group-hover:text-trace-secondary transition-colors">---&gt;</div>
               </a>
-              <a href="https://github.com/akshayvarma121/Firefly_solver/releases" target="_blank" rel="noreferrer" className="w-full p-6 border border-border bg-background hover:border-trace-secondary hover:text-trace-secondary transition-colors group flex justify-between items-center">
+              <a href="https://github.com/akshayvarma121/Firefly_solver/releases/download/v0.2.0/firefly-macos" className="w-full p-6 border border-border bg-background hover:border-trace-secondary hover:text-trace-secondary transition-colors group flex justify-between items-center">
                 <div>
                   <div className="font-bold uppercase tracking-widest text-lg mb-1 group-hover:text-trace-secondary transition-colors">macOS</div>
-                  <div className="font-mono text-xs text-text-muted uppercase">Apple Silicon / .dmg</div>
+                  <div className="font-mono text-xs text-text-muted uppercase">Apple Silicon / Binary</div>
                 </div>
                 <div className="font-mono text-border group-hover:text-trace-secondary transition-colors">---&gt;</div>
               </a>
