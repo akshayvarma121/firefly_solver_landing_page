@@ -71,6 +71,30 @@ function App() {
           </div>
         </section>
 
+        {/* SMALL CAPABILITIES STRIP */}
+        <div className="flex border-b border-border bg-panel overflow-x-auto hide-scrollbar">
+           <div className="px-6 py-4 border-r border-border flex items-center gap-4 shrink-0 hover:bg-background transition-colors group">
+              <span className="font-mono text-signal font-bold">LP</span>
+              <span className="text-xs uppercase tracking-widest font-bold group-hover:text-signal transition-colors">Linear Programming</span>
+           </div>
+           <div className="px-6 py-4 border-r border-border flex items-center gap-4 shrink-0 hover:bg-background transition-colors group">
+              <span className="font-mono text-signal font-bold">MILP</span>
+              <span className="text-xs uppercase tracking-widest font-bold group-hover:text-signal transition-colors">Mixed-Integer Linear</span>
+           </div>
+           <div className="px-6 py-4 border-r border-border flex items-center gap-4 shrink-0 hover:bg-background transition-colors relative group">
+              <span className="absolute top-0 right-0 bg-signal text-background text-[9px] font-bold px-1 uppercase tracking-widest">In Dev</span>
+              <span className="font-mono text-trace-secondary font-bold opacity-50">QP</span>
+              <span className="text-xs uppercase tracking-widest font-bold opacity-50">Quadratic Programming</span>
+           </div>
+           <div className="px-6 py-4 border-r border-border flex items-center gap-4 shrink-0 hover:bg-background transition-colors">
+              <span className="font-mono text-text-primary font-bold">.MPS</span>
+              <span className="text-xs uppercase tracking-widest font-bold text-text-muted">Industry Standard Parsing</span>
+           </div>
+           <div className="flex-grow px-6 py-4 flex items-center justify-end text-xs uppercase tracking-widest text-border font-mono shrink-0">
+              [ SUPPORTED MODELS ]
+           </div>
+        </div>
+
         {/* TELEMETRY & PHILOSOPHY - Split Screen */}
         <section className="flex flex-col lg:flex-row border-b border-border">
           {/* Telemetry Window */}
@@ -143,36 +167,6 @@ function App() {
           </div>
         </section>
 
-        {/* CAPABILITIES */}
-        <section className="border-b border-border bg-panel py-12 md:py-24">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-border pb-6">
-              <h2 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase">Supported Models</h2>
-              <p className="font-mono text-xs text-text-muted tracking-widest uppercase">Mathematical Capabilities</p>
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="p-8 border border-border bg-background hover:border-signal transition-colors group">
-                <div className="font-mono text-signal text-3xl font-bold mb-4">LP</div>
-                <div className="font-bold uppercase tracking-widest text-sm group-hover:text-signal transition-colors">Linear<br/>Programming</div>
-              </div>
-              <div className="p-8 border border-border bg-background hover:border-signal transition-colors group">
-                <div className="font-mono text-signal text-3xl font-bold mb-4">MILP</div>
-                <div className="font-bold uppercase tracking-widest text-sm group-hover:text-signal transition-colors">Mixed-Integer<br/>Linear</div>
-              </div>
-              <div className="p-8 border border-border bg-background hover:border-signal transition-colors relative overflow-hidden group">
-                <div className="absolute top-0 right-0 bg-signal text-background text-[10px] font-bold px-3 py-1 uppercase tracking-widest">In Dev</div>
-                <div className="font-mono text-trace-secondary text-3xl font-bold mb-4 opacity-50">QP</div>
-                <div className="font-bold uppercase tracking-widest text-sm opacity-50">Quadratic<br/>Programming</div>
-              </div>
-              <div className="p-8 border border-border bg-background hover:border-signal transition-colors group">
-                <div className="font-mono text-text-primary text-3xl font-bold mb-4">.MPS</div>
-                <div className="font-bold uppercase tracking-widest text-sm text-text-muted">Industry Standard<br/>Parsing</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* THE MATH PIPELINE (New Architecture) */}
         <section className="border-b border-border flex flex-col lg:flex-row bg-background">
           <div className="w-full lg:w-1/3 p-6 md:p-12 border-r border-border flex flex-col justify-between">
@@ -183,69 +177,43 @@ function App() {
               From raw MPS constraints to guaranteed optimality. The entire execution path is strictly engineered for massive parallelization.
             </div>
           </div>
-          <div className="w-full lg:w-2/3 p-8 md:p-12 lg:p-20 flex items-center overflow-x-auto">
-            <div className="flex flex-col min-w-[600px] w-full pb-8">
-              {/* Flowchart Node 1 */}
-              <div className="flex items-start">
-                <div className="w-full max-w-sm border border-text-primary bg-panel p-6 relative group hover:-translate-y-1 transition-transform">
-                  <div className="absolute top-0 left-0 w-1 h-full bg-text-primary"></div>
-                  <div className="font-mono text-xs tracking-widest uppercase text-text-muted mb-2">Stage 01 // Input</div>
-                  <h3 className="text-xl font-bold tracking-tight mb-2 uppercase">MPS Parsing</h3>
-                  <p className="text-sm text-text-muted leading-relaxed font-light">Industry-standard .mps files are ingested, constructing the initial constraint matrix and objective vectors.</p>
+          <div className="w-full lg:w-2/3 flex flex-col bg-background">
+             {/* Node 1 */}
+             <div className="p-8 md:p-12 border-b border-border flex flex-col md:flex-row gap-6 items-start hover:bg-panel transition-colors">
+                <div className="w-16 h-16 shrink-0 bg-panel border border-text-primary flex items-center justify-center font-mono text-text-primary font-bold">01</div>
+                <div>
+                   <div className="font-mono text-xs tracking-widest uppercase text-text-muted mb-2">Stage 01 // Input</div>
+                   <h3 className="text-2xl font-bold tracking-tight mb-2 uppercase text-text-primary">MPS Parsing</h3>
+                   <p className="text-sm text-text-muted leading-relaxed font-light">Industry-standard .mps files are ingested, constructing the initial constraint matrix and objective vectors directly into memory.</p>
                 </div>
-              </div>
-
-              {/* Connecting Line 1 */}
-              <div className="flex items-start">
-                <div className="w-16 h-10 border-l-2 border-b-2 border-dashed border-text-primary ml-12 rounded-bl-lg relative">
-                   <div className="absolute bottom-[-5px] right-[-5px] w-2.5 h-2.5 bg-border rotate-45"></div>
+             </div>
+             {/* Node 2 */}
+             <div className="p-8 md:p-12 border-b border-border flex flex-col md:flex-row gap-6 items-start hover:bg-panel transition-colors">
+                <div className="w-16 h-16 shrink-0 bg-panel border border-border flex items-center justify-center font-mono text-border font-bold">02</div>
+                <div>
+                   <div className="font-mono text-xs tracking-widest uppercase text-text-muted mb-2">Stage 02 // Reduction</div>
+                   <h3 className="text-2xl font-bold tracking-tight mb-2 uppercase text-text-muted">Presolve Matrix</h3>
+                   <p className="text-sm text-text-muted leading-relaxed font-light">Redundant rows and empty columns are systematically stripped out to shrink the dimensionality of the problem before solving.</p>
                 </div>
-              </div>
-
-              {/* Flowchart Node 2 */}
-              <div className="flex items-start ml-16 md:ml-24 mt-[-16px]">
-                <div className="w-full max-w-sm border border-border bg-panel p-6 relative group hover:-translate-y-1 transition-transform">
-                  <div className="absolute top-0 left-0 w-1 h-full bg-border"></div>
-                  <div className="font-mono text-xs tracking-widest uppercase text-text-muted mb-2">Stage 02 // Reduction</div>
-                  <h3 className="text-xl font-bold tracking-tight mb-2 uppercase">Presolve Matrix</h3>
-                  <p className="text-sm text-text-muted leading-relaxed font-light">Redundant rows and empty columns are stripped out to shrink the dimensionality of the problem before solving.</p>
+             </div>
+             {/* Node 3 */}
+             <div className="p-8 md:p-12 border-b border-border flex flex-col md:flex-row gap-6 items-start hover:bg-panel transition-colors">
+                <div className="w-16 h-16 shrink-0 bg-panel border border-signal flex items-center justify-center font-mono text-signal font-bold">03</div>
+                <div>
+                   <div className="font-mono text-xs tracking-widest uppercase text-signal mb-2">Stage 03 // Accelerated</div>
+                   <h3 className="text-2xl font-bold tracking-tight mb-2 uppercase text-signal">PDHG Execution</h3>
+                   <p className="text-sm text-text-muted leading-relaxed font-light">Primal-Dual Hybrid Gradient replaces sequential CPU factorizations with massively parallel sparse matrix-vector math on the GPU.</p>
                 </div>
-              </div>
-
-              {/* Connecting Line 2 */}
-              <div className="flex items-start ml-16 md:ml-24">
-                <div className="w-16 h-10 border-l-2 border-b-2 border-dashed border-border ml-12 rounded-bl-lg relative">
-                   <div className="absolute bottom-[-5px] right-[-5px] w-2.5 h-2.5 bg-signal rotate-45"></div>
+             </div>
+             {/* Node 4 */}
+             <div className="p-8 md:p-12 flex flex-col md:flex-row gap-6 items-start hover:bg-panel transition-colors">
+                <div className="w-16 h-16 shrink-0 bg-panel border border-trace-secondary flex items-center justify-center font-mono text-trace-secondary font-bold">04</div>
+                <div>
+                   <div className="font-mono text-xs tracking-widest uppercase text-trace-secondary mb-2">Stage 04 // Output</div>
+                   <h3 className="text-2xl font-bold tracking-tight mb-2 uppercase text-trace-secondary">Optimal Solution</h3>
+                   <p className="text-sm text-text-muted leading-relaxed font-light">Guaranteed optimality is achieved and exported with mathematically verified primal and dual convergence metrics.</p>
                 </div>
-              </div>
-
-              {/* Flowchart Node 3 */}
-              <div className="flex items-start ml-32 md:ml-48 mt-[-16px]">
-                <div className="w-full max-w-sm border border-signal bg-panel p-6 relative group hover:-translate-y-1 transition-transform">
-                  <div className="absolute top-0 left-0 w-1 h-full bg-signal"></div>
-                  <div className="font-mono text-xs tracking-widest uppercase text-signal mb-2">Stage 03 // Accelerated</div>
-                  <h3 className="text-xl font-bold tracking-tight mb-2 uppercase">PDHG Execution</h3>
-                  <p className="text-sm text-text-muted leading-relaxed font-light">Primal-Dual Hybrid Gradient replaces sequential factorizations with massively parallel sparse matrix-vector math on the GPU.</p>
-                </div>
-              </div>
-              
-              {/* Connecting Line 3 */}
-              <div className="flex items-start ml-32 md:ml-48">
-                <div className="w-16 h-10 border-l-2 border-b-2 border-dashed border-signal ml-12 rounded-bl-lg relative">
-                   <div className="absolute bottom-[-5px] right-[-5px] w-2.5 h-2.5 bg-trace-secondary rotate-45"></div>
-                </div>
-              </div>
-
-              {/* Flowchart Node 4 */}
-              <div className="flex items-start ml-48 md:ml-72 mt-[-16px]">
-                <div className="w-full max-w-sm border border-trace-secondary bg-panel p-6 relative group hover:-translate-y-1 transition-transform">
-                  <div className="absolute top-0 left-0 w-1 h-full bg-trace-secondary"></div>
-                  <div className="font-mono text-xs tracking-widest uppercase text-trace-secondary mb-2">Stage 04 // Output</div>
-                  <h3 className="text-xl font-bold tracking-tight mb-2 uppercase">Optimal Solution</h3>
-                  <p className="text-sm text-text-muted leading-relaxed font-light">Guaranteed optimality achieved with mathematically verified primal and dual convergence metrics.</p>
-                </div>
-              </div>
-            </div>
+             </div>
           </div>
         </section>
 
