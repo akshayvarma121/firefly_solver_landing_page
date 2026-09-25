@@ -31,65 +31,43 @@ function App() {
 
       <main className="flex-grow pt-24">
         {/* Hero Section */}
-        <section className="relative min-h-[85vh] flex flex-col justify-center items-center text-center border-b border-border overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
-               style={{ backgroundImage: 'linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)', backgroundSize: '64px 64px' }}>
-          </div>
-          
-          <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-signal/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/4 translate-x-1/4"></div>
-          <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-trace-secondary/10 rounded-full blur-[100px] pointer-events-none translate-y-1/4 -translate-x-1/4"></div>
-          
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] bg-text-primary opacity-[0.02] pointer-events-none" style={{ maskImage: 'url(/logo.png)', WebkitMaskImage: 'url(/logo.png)', maskSize: 'contain', maskRepeat: 'no-repeat', maskPosition: 'center' }}></div>
-          
-          <div className="relative z-10 w-full max-w-6xl px-6 md:px-12">
+        <section className="relative min-h-[90vh] flex flex-col justify-center items-start border-b border-border bg-background">
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-between h-full py-20">
             
-            <h1 className="animate-fade-in-up animation-delay-200 text-6xl md:text-[9rem] font-bold mb-6 text-text-primary tracking-tighter uppercase leading-none">
-              <span className="text-signal relative inline-block group">
+            <div className="animate-fade-in-up animation-delay-100 flex items-center gap-4 mb-20">
+               <div className="w-12 h-12 bg-signal" style={{ maskImage: 'url(/logo.png)', WebkitMaskImage: 'url(/logo.png)', maskSize: 'contain', maskRepeat: 'no-repeat', maskPosition: 'center' }}></div>
+               <div className="text-sm font-mono tracking-widest text-text-muted border-l border-border pl-4">v0.1.0 // CORE ENGINE</div>
+            </div>
+            
+            <div className="flex-grow flex flex-col justify-center mb-20">
+              <h1 className="animate-fade-in-up animation-delay-200 text-7xl md:text-[12rem] font-bold mb-6 text-text-primary tracking-tighter uppercase leading-[0.85]">
                 FIREFLY
-                <span className="absolute -bottom-2 left-0 w-full h-1 bg-signal transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
-              </span>
-              <br/>SOLVER
-            </h1>
-            
-            <p className="animate-fade-in-up animation-delay-300 text-2xl md:text-3xl text-text-muted mb-16 max-w-4xl mx-auto font-light tracking-wide">
-              Indigenous GPU-Accelerated Optimization
-            </p>
-            
-            <div className="animate-fade-in-up animation-delay-400 flex justify-center mb-20">
-              <p className="text-lg md:text-xl text-text-muted max-w-2xl border-l-2 border-signal pl-8 text-left leading-relaxed relative before:absolute before:left-[-2px] before:top-0 before:w-0.5 before:h-8 before:bg-signal">
-                A sovereign, inspectable alternative to commercial solvers—built entirely from mathematical first principles and accelerated on the GPU.
-              </p>
+                <br/>
+                <span className="text-signal">SOLVER</span>
+              </h1>
             </div>
             
-            <div className="animate-fade-in-up animation-delay-500 flex flex-col sm:flex-row justify-center gap-6">
-              <a href="#download" className="px-10 py-5 bg-signal text-background font-bold text-sm hover:bg-opacity-90 transition-all hover:shadow-[0_0_20px_rgba(232,163,61,0.2)] uppercase tracking-[0.2em]">
-                Initialize System
-              </a>
-              <a href="#architecture" className="px-10 py-5 bg-transparent border border-border text-text-primary font-bold text-sm hover:border-signal transition-colors uppercase tracking-[0.2em] flex items-center gap-3 group">
-                View Specs
-                <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-              </a>
+            <div className="animate-fade-in-up animation-delay-300 grid grid-cols-1 md:grid-cols-12 gap-12 pt-12 border-t border-border w-full items-end">
+              <div className="md:col-span-8">
+                <h3 className="text-xl font-mono text-text-primary mb-4 uppercase tracking-widest flex items-center gap-3">
+                  <span className="w-2 h-2 bg-signal"></span>
+                  The Premise
+                </h3>
+                <p className="text-xl md:text-3xl text-text-muted leading-snug font-light max-w-3xl">
+                  A sovereign, inspectable alternative to commercial solvers. Built entirely from mathematical first principles and strictly engineered for GPU acceleration.
+                </p>
+              </div>
+              <div className="md:col-span-4 flex justify-start md:justify-end">
+                 <a href="#download" className="px-10 py-5 bg-signal text-background font-bold text-sm hover:bg-text-primary transition-colors uppercase tracking-[0.2em] w-full md:w-auto text-center">
+                   INITIALIZE SYSTEM
+                 </a>
+              </div>
             </div>
+            
           </div>
         </section>
 
-        {/* Marquee Banner */}
-        <div className="border-b border-border bg-signal text-background py-4 overflow-hidden flex whitespace-nowrap">
-          <div className="animate-marquee inline-flex items-center gap-8 font-mono text-sm tracking-widest font-bold">
-            <span>LINEAR PROGRAMMING</span><span className="w-1.5 h-1.5 rotate-45 bg-background"></span>
-            <span>MIXED-INTEGER PROGRAMMING</span><span className="w-1.5 h-1.5 rotate-45 bg-background"></span>
-            <span>QUADRATIC PROGRAMMING</span><span className="w-1.5 h-1.5 rotate-45 bg-background"></span>
-            <span>GPU-NATIVE</span><span className="w-1.5 h-1.5 rotate-45 bg-background"></span>
-            <span>PRIMAL-DUAL HYBRID GRADIENT</span><span className="w-1.5 h-1.5 rotate-45 bg-background"></span>
-            
-            {/* Duplicated for seamless loop */}
-            <span>LINEAR PROGRAMMING</span><span className="w-1.5 h-1.5 rotate-45 bg-background"></span>
-            <span>MIXED-INTEGER PROGRAMMING</span><span className="w-1.5 h-1.5 rotate-45 bg-background"></span>
-            <span>QUADRATIC PROGRAMMING</span><span className="w-1.5 h-1.5 rotate-45 bg-background"></span>
-            <span>GPU-NATIVE</span><span className="w-1.5 h-1.5 rotate-45 bg-background"></span>
-            <span>PRIMAL-DUAL HYBRID GRADIENT</span><span className="w-1.5 h-1.5 rotate-45 bg-background"></span>
-          </div>
-        </div>
+
 
         {/* Live Console Terminal */}
         <section className="py-32 px-6 md:px-12 bg-background border-b border-border">
@@ -137,10 +115,9 @@ function App() {
         </section>
 
         {/* Philosophy Grid */}
-        <section className="py-32 px-6 md:px-12 border-b border-border relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-signal/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+        <section className="py-32 px-6 md:px-12 border-b border-border bg-background">
           
-          <div className="max-w-6xl mx-auto relative z-10">
+          <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-20 text-text-primary uppercase tracking-tighter">
               Zero Black Boxes
             </h2>
@@ -198,7 +175,7 @@ function App() {
 
         {/* Architecture & Math */}
         <section id="architecture" className="py-32 px-6 md:px-12 bg-panel border-b border-border">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-20">
               
               {/* Left Column */}
@@ -258,7 +235,7 @@ function App() {
 
         {/* Benchmarks (Bar Chart style) */}
         <section id="benchmarks" className="py-32 px-6 md:px-12 border-b border-border bg-background">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="mb-20 text-center">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-text-primary uppercase tracking-tighter">Performance Audit</h2>
               <p className="text-text-muted font-mono tracking-widest uppercase text-sm">Execution Time: GPU (PDHG) vs CPU Reference</p>
@@ -342,10 +319,9 @@ function App() {
         </section>
 
         {/* Deploy Section */}
-        <section id="download" className="py-40 px-6 md:px-12 bg-panel relative overflow-hidden">
-          <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-signal to-transparent opacity-20"></div>
+        <section id="download" className="py-40 px-6 md:px-12 bg-panel border-b border-border">
           
-          <div className="max-w-6xl mx-auto relative z-10">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
               <h2 className="text-5xl md:text-7xl font-bold mb-6 text-text-primary uppercase tracking-tighter">Deploy <span className="text-signal">Firefly</span></h2>
               <p className="text-text-muted text-xl max-w-2xl mx-auto font-light leading-relaxed">
@@ -444,9 +420,8 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="pt-24 pb-12 px-6 md:px-12 bg-background border-t border-border relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-signal/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
-        <div className="max-w-6xl mx-auto relative z-10">
+      <footer className="pt-24 pb-12 px-6 md:px-12 bg-background">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div className="md:col-span-2">
               <div className="flex items-center gap-4 mb-6 group cursor-pointer w-fit">
