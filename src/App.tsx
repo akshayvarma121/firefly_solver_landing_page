@@ -170,56 +170,73 @@ function App() {
         <section id="architecture" className="border-b border-border flex flex-col lg:flex-row">
           <div className="w-full lg:w-1/3 p-6 md:p-12 border-r border-border bg-signal text-background flex flex-col justify-between">
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.85] mb-12 uppercase">
-              Built for Graphics Cards
+              The Math Pipeline
             </h2>
             <div className="text-lg leading-relaxed font-medium">
-              We designed Firefly specifically for GPUs. By replacing traditional, slow sequential math with modern parallel algorithms, we can solve massive problems significantly faster.
+              From raw MPS constraints to guaranteed optimality. The entire execution path is built from first principles and strictly engineered for massive parallelization on the GPU.
             </div>
           </div>
           <div className="w-full lg:w-2/3 bg-panel p-8 md:p-12 lg:p-20 flex items-center overflow-x-auto">
             
-            <div className="flex flex-col min-w-[500px] w-full">
+            <div className="flex flex-col min-w-[600px] w-full pb-8">
               {/* Flowchart Node 1 */}
               <div className="flex items-start">
-                <div className="w-full max-w-md border border-signal bg-background p-6 md:p-8 relative group hover:-translate-y-1 transition-transform">
-                  <div className="absolute top-0 left-0 w-1 h-full bg-signal"></div>
-                  <div className="font-mono text-xs tracking-widest uppercase text-signal mb-4">Tier 01 // C++20 & CUDA</div>
-                  <h3 className="text-2xl font-bold tracking-tight mb-2 uppercase">Core Engine</h3>
-                  <p className="text-sm text-text-muted leading-relaxed font-light">MPS parsing, presolve reductions, CPU fallback, and the highly parallel PDLP solver executing on GPU hardware.</p>
+                <div className="w-full max-w-sm border border-text-primary bg-background p-6 relative group hover:-translate-y-1 transition-transform">
+                  <div className="absolute top-0 left-0 w-1 h-full bg-text-primary"></div>
+                  <div className="font-mono text-xs tracking-widest uppercase text-text-muted mb-2">Stage 01 // Input</div>
+                  <h3 className="text-xl font-bold tracking-tight mb-2 uppercase">MPS Parsing</h3>
+                  <p className="text-sm text-text-muted leading-relaxed font-light">Industry-standard .mps files are ingested, constructing the initial constraint matrix and objective vectors.</p>
                 </div>
               </div>
 
               {/* Connecting Line 1 */}
               <div className="flex items-start">
-                <div className="w-16 h-12 border-l-2 border-b-2 border-dashed border-signal ml-12 rounded-bl-lg relative">
-                   <div className="absolute bottom-[-5px] right-[-5px] w-2.5 h-2.5 bg-trace-secondary rotate-45"></div>
+                <div className="w-16 h-10 border-l-2 border-b-2 border-dashed border-text-primary ml-12 rounded-bl-lg relative">
+                   <div className="absolute bottom-[-5px] right-[-5px] w-2.5 h-2.5 bg-border rotate-45"></div>
                 </div>
               </div>
 
               {/* Flowchart Node 2 */}
-              <div className="flex items-start ml-16 md:ml-32 mt-[-20px]">
-                <div className="w-full max-w-md border border-trace-secondary bg-background p-6 md:p-8 relative group hover:-translate-y-1 transition-transform">
-                  <div className="absolute top-0 left-0 w-1 h-full bg-trace-secondary"></div>
-                  <div className="font-mono text-xs tracking-widest uppercase text-trace-secondary mb-4">Tier 02 // PYTHON & FASTAPI</div>
-                  <h3 className="text-2xl font-bold tracking-tight mb-2 uppercase">API Gateway</h3>
-                  <p className="text-sm text-text-muted leading-relaxed font-light">The bridge exposing REST endpoints and WebSocket telemetry streaming for live solver monitoring.</p>
+              <div className="flex items-start ml-16 md:ml-24 mt-[-16px]">
+                <div className="w-full max-w-sm border border-border bg-background p-6 relative group hover:-translate-y-1 transition-transform">
+                  <div className="absolute top-0 left-0 w-1 h-full bg-border"></div>
+                  <div className="font-mono text-xs tracking-widest uppercase text-text-muted mb-2">Stage 02 // Reduction</div>
+                  <h3 className="text-xl font-bold tracking-tight mb-2 uppercase">Presolve Matrix</h3>
+                  <p className="text-sm text-text-muted leading-relaxed font-light">Redundant rows and empty columns are stripped out to shrink the dimensionality of the problem before solving.</p>
                 </div>
               </div>
 
               {/* Connecting Line 2 */}
-              <div className="flex items-start ml-16 md:ml-32">
-                <div className="w-16 h-12 border-l-2 border-b-2 border-dashed border-trace-secondary ml-12 rounded-bl-lg relative">
-                   <div className="absolute bottom-[-5px] right-[-5px] w-2.5 h-2.5 bg-text-primary rotate-45"></div>
+              <div className="flex items-start ml-16 md:ml-24">
+                <div className="w-16 h-10 border-l-2 border-b-2 border-dashed border-border ml-12 rounded-bl-lg relative">
+                   <div className="absolute bottom-[-5px] right-[-5px] w-2.5 h-2.5 bg-signal rotate-45"></div>
                 </div>
               </div>
 
               {/* Flowchart Node 3 */}
-              <div className="flex items-start ml-32 md:ml-64 mt-[-20px]">
-                <div className="w-full max-w-md border border-border bg-background p-6 md:p-8 relative group hover:-translate-y-1 transition-transform">
-                  <div className="absolute top-0 left-0 w-1 h-full bg-text-primary"></div>
-                  <div className="font-mono text-xs tracking-widest uppercase text-text-primary mb-4">Tier 03 // REACT & TAURI</div>
-                  <h3 className="text-2xl font-bold tracking-tight mb-2 uppercase">Desktop App</h3>
-                  <p className="text-sm text-text-muted leading-relaxed font-light">A beautiful standalone UI giving you live convergence charts, hardware stats, and structural analysis.</p>
+              <div className="flex items-start ml-32 md:ml-48 mt-[-16px]">
+                <div className="w-full max-w-sm border border-signal bg-background p-6 relative group hover:-translate-y-1 transition-transform">
+                  <div className="absolute top-0 left-0 w-1 h-full bg-signal"></div>
+                  <div className="font-mono text-xs tracking-widest uppercase text-signal mb-2">Stage 03 // Accelerated</div>
+                  <h3 className="text-xl font-bold tracking-tight mb-2 uppercase">PDHG Execution</h3>
+                  <p className="text-sm text-text-muted leading-relaxed font-light">Primal-Dual Hybrid Gradient replaces sequential factorizations with massively parallel sparse matrix-vector math on the GPU.</p>
+                </div>
+              </div>
+              
+              {/* Connecting Line 3 */}
+              <div className="flex items-start ml-32 md:ml-48">
+                <div className="w-16 h-10 border-l-2 border-b-2 border-dashed border-signal ml-12 rounded-bl-lg relative">
+                   <div className="absolute bottom-[-5px] right-[-5px] w-2.5 h-2.5 bg-trace-secondary rotate-45"></div>
+                </div>
+              </div>
+
+              {/* Flowchart Node 4 */}
+              <div className="flex items-start ml-48 md:ml-72 mt-[-16px]">
+                <div className="w-full max-w-sm border border-trace-secondary bg-background p-6 relative group hover:-translate-y-1 transition-transform">
+                  <div className="absolute top-0 left-0 w-1 h-full bg-trace-secondary"></div>
+                  <div className="font-mono text-xs tracking-widest uppercase text-trace-secondary mb-2">Stage 04 // Output</div>
+                  <h3 className="text-xl font-bold tracking-tight mb-2 uppercase">Optimal Solution</h3>
+                  <p className="text-sm text-text-muted leading-relaxed font-light">Guaranteed optimality achieved with mathematically verified primal and dual convergence metrics.</p>
                 </div>
               </div>
             </div>
