@@ -3,12 +3,14 @@ import { useState, useEffect } from 'react';
 function App() {
   const [mounted, setMounted] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [cliOs, setCliOs] = useState<'windows' | 'macos'>('windows');
+  const [showModal, setShowModal] = useState(false);
   
   useEffect(() => { setMounted(true); }, []);
   if (!mounted) return null;
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText('irm https://bit.ly/install-firefly | iex');
+  const handleCopy = (text: string) => {
+    navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -324,10 +326,18 @@ function App() {
             <h2 className="text-6xl md:text-8xl font-bold tracking-tighter mb-16 uppercase">CLI Tool</h2>
             
             <div className="mb-16">
-              <p className="font-mono text-sm tracking-widest text-text-muted mb-6 uppercase">Quick Install</p>
+              <div className="flex justify-between items-end mb-6">
+                <p className="font-mono text-sm tracking-widest text-text-muted uppercase">Quick Install</p>
+                <div className="flex gap-6 font-mono text-xs font-bold uppercase">
+                  <button onClick={() => setCliOs('windows')} className={`transition-colors ${cliOs === 'windows' ? 'text-signal' : 'text-text-muted hover:text-text-primary'}`}>Windows</button>
+                  <button onClick={() => setCliOs('macos')} className={`transition-colors ${cliOs === 'macos' ? 'text-signal' : 'text-text-muted hover:text-text-primary'}`}>macOS</button>
+                </div>
+              </div>
               <div className="bg-background border border-border p-6 flex justify-between items-center cursor-pointer hover:border-signal transition-colors group"
-                   onClick={handleCopy}>
-                <code className="text-signal font-mono text-sm md:text-base">irm https://bit.ly/install-firefly | iex</code>
+                   onClick={() => handleCopy(cliOs === 'windows' ? 'irm https://bit.ly/install-firefly | iex' : 'curl -sL https://bit.ly/install-firefly.sh | bash')}>
+                <code className="text-signal font-mono text-sm md:text-base">
+                  {cliOs === 'windows' ? 'irm https://bit.ly/install-firefly | iex' : 'curl -sL https://bit.ly/install-firefly.sh | bash'}
+                </code>
                 <span className={`font-mono text-xs font-bold uppercase transition-colors ${copied ? 'text-signal' : 'text-text-muted group-hover:text-text-primary'}`}>
                   {copied ? 'COPIED!' : 'COPY'}
                 </span>
@@ -376,9 +386,9 @@ function App() {
               </div>
             </div>
             
-            <a href="https://github.com/akshayvarma121/Firefly_solver/releases" target="_blank" rel="noreferrer" className="block text-center w-full px-8 py-6 border border-trace-secondary text-trace-secondary hover:bg-trace-secondary hover:text-background font-bold text-base md:text-lg transition-colors tracking-widest uppercase">
+            <button onClick={() => setShowModal(true)} className="block text-center w-full px-8 py-6 border border-trace-secondary text-trace-secondary hover:bg-trace-secondary hover:text-background font-bold text-base md:text-lg transition-colors tracking-widest uppercase">
               Download Executable
-            </a>
+            </button>
           </div>
         </section>
       </main>
@@ -421,6 +431,33 @@ function App() {
           </div>
         </div>
       </footer>
+      {/* MODAL */}
+      {showModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background/80 backdrop-blur-sm p-6" onClick={() => setShowModal(false)}>
+          <div className="w-full max-w-lg bg-panel border border-border shadow-2xl flex flex-col" onClick={e => e.stopPropagation()}>
+            <div className="p-6 border-b border-border flex justify-between items-center bg-background">
+              <h3 className="font-bold text-xl uppercase tracking-tighter">Select Architecture</h3>
+              <button onClick={() => setShowModal(false)} className="text-text-muted hover:text-signal font-mono text-2xl">&times;</button>
+            </div>
+            <div className="p-8 flex flex-col gap-4">
+              <a href="https://github.com/akshayvarma121/Firefly_solver/releases" target="_blank" rel="noreferrer" className="w-full p-6 border border-border bg-background hover:border-trace-secondary hover:text-trace-secondary transition-colors group flex justify-between items-center">
+                <div>
+                  <div className="font-bold uppercase tracking-widest text-lg mb-1 group-hover:text-trace-secondary transition-colors">Windows</div>
+                  <div className="font-mono text-xs text-text-muted uppercase">64-bit / .exe</div>
+                </div>
+                <div className="font-mono text-border group-hover:text-trace-secondary transition-colors">---&gt;</div>
+              </a>
+              <a href="https://github.com/akshayvarma121/Firefly_solver/releases" target="_blank" rel="noreferrer" className="w-full p-6 border border-border bg-background hover:border-trace-secondary hover:text-trace-secondary transition-colors group flex justify-between items-center">
+                <div>
+                  <div className="font-bold uppercase tracking-widest text-lg mb-1 group-hover:text-trace-secondary transition-colors">macOS</div>
+                  <div className="font-mono text-xs text-text-muted uppercase">Apple Silicon / .dmg</div>
+                </div>
+                <div className="font-mono text-border group-hover:text-trace-secondary transition-colors">---&gt;</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
