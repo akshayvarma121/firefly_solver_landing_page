@@ -144,8 +144,18 @@ function App() {
         </section>
 
         {/* CAPABILITIES */}
-        <section className="border-b border-border bg-background">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <section className="border-b border-border bg-panel">
+          <div className="flex flex-col md:flex-row border-b border-border">
+            <div className="p-8 md:p-12 w-full md:w-1/3 border-r border-border flex items-center bg-background">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter uppercase">Supported<br/>Models</h2>
+            </div>
+            <div className="w-full md:w-2/3 p-8 md:p-12 flex items-center">
+              <p className="text-lg text-text-muted leading-relaxed font-light max-w-2xl">
+                Firefly is engineered to natively parse, presolve, and accelerate industry-standard optimization models directly on the GPU without requiring intermediate conversion steps.
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 bg-background">
             <div className="p-8 md:p-12 border-r border-b lg:border-b-0 border-border bg-panel hover:bg-background transition-colors group">
               <div className="font-mono text-signal text-2xl font-bold mb-4">LP</div>
               <div className="font-bold uppercase tracking-widest text-sm group-hover:text-signal transition-colors">Linear<br/>Programming</div>
