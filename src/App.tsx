@@ -36,13 +36,12 @@ function App() {
                style={{ backgroundImage: 'linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)', backgroundSize: '64px 64px' }}>
           </div>
           
+          <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-signal/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/4 translate-x-1/4"></div>
+          <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-trace-secondary/10 rounded-full blur-[100px] pointer-events-none translate-y-1/4 -translate-x-1/4"></div>
+          
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] bg-text-primary opacity-[0.02] pointer-events-none" style={{ maskImage: 'url(/logo.png)', WebkitMaskImage: 'url(/logo.png)', maskSize: 'contain', maskRepeat: 'no-repeat', maskPosition: 'center' }}></div>
+          
           <div className="relative z-10 w-full max-w-6xl px-6 md:px-12">
-            <div className="animate-fade-in-up animation-delay-100 mb-12">
-              <span className="inline-flex items-center gap-3 px-4 py-1.5 border border-border text-text-muted font-mono text-xs tracking-widest bg-panel">
-                <span className="w-1.5 h-1.5 bg-signal animate-pulse-slow"></span>
-                SYSTEM ONLINE // CUDA SM_89 READY
-              </span>
-            </div>
             
             <h1 className="animate-fade-in-up animation-delay-200 text-6xl md:text-[9rem] font-bold mb-6 text-text-primary tracking-tighter uppercase leading-none">
               <span className="text-signal relative inline-block group">
@@ -438,39 +437,49 @@ function App() {
 
             </div>
 
-            {/* Links Block */}
-            <div className="mt-20 pt-10 border-t border-border flex flex-col sm:flex-row justify-center items-center gap-6 text-sm font-mono tracking-widest uppercase">
-              <a href="https://github.com/akshayvarma121/Firefly_solver" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-text-muted hover:text-signal transition-colors">
-                <div className="w-1.5 h-1.5 bg-border"></div>
-                GitHub Repository
-              </a>
-              <span className="hidden sm:inline text-border">|</span>
-              <a href="https://firefly-solver.vercel.app" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-text-muted hover:text-signal transition-colors">
-                <div className="w-1.5 h-1.5 bg-border"></div>
-                Official Website
-              </a>
-            </div>
+            {/* Removed Links Block */}
             
           </div>
         </section>
       </main>
 
       {/* Footer */}
-      <footer className="py-12 px-6 md:px-12 bg-background border-t border-border">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-4 opacity-50 hover:opacity-100 transition-opacity group cursor-pointer">
-            <div className="w-6 h-6 bg-signal group-hover:bg-text-primary transition-colors duration-300" style={{ maskImage: 'url(/logo.png)', WebkitMaskImage: 'url(/logo.png)', maskSize: 'contain', WebkitMaskSize: 'contain', maskRepeat: 'no-repeat', WebkitMaskRepeat: 'no-repeat', maskPosition: 'center', WebkitMaskPosition: 'center' }}></div>
-            <div className="text-sm font-bold tracking-[0.2em] text-text-primary uppercase group-hover:text-signal transition-colors duration-300">Firefly</div>
+      <footer className="pt-24 pb-12 px-6 md:px-12 bg-background border-t border-border relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-signal/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div className="md:col-span-2">
+              <div className="flex items-center gap-4 mb-6 group cursor-pointer w-fit">
+                <div className="w-10 h-10 bg-signal group-hover:bg-text-primary transition-colors duration-300" style={{ maskImage: 'url(/logo.png)', WebkitMaskImage: 'url(/logo.png)', maskSize: 'contain', WebkitMaskRepeat: 'no-repeat', maskPosition: 'left' }}></div>
+                <div className="text-2xl font-bold tracking-[0.2em] text-text-primary uppercase group-hover:text-signal transition-colors duration-300">Firefly</div>
+              </div>
+              <p className="text-text-muted max-w-sm leading-relaxed">
+                A sovereign, inspectable alternative to commercial solvers—built entirely from mathematical first principles and accelerated on the GPU.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="text-text-primary font-bold tracking-widest uppercase mb-6 text-sm">Quick Links</h4>
+              <ul className="space-y-4 text-text-muted text-sm tracking-wide">
+                <li><a href="#architecture" className="hover:text-signal transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-border rounded-full"></span> Architecture</a></li>
+                <li><a href="#benchmarks" className="hover:text-signal transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-border rounded-full"></span> Performance Audit</a></li>
+                <li><a href="#download" className="hover:text-signal transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-border rounded-full"></span> Deploy Application</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="text-text-primary font-bold tracking-widest uppercase mb-6 text-sm">Resources</h4>
+              <ul className="space-y-4 text-text-muted text-sm tracking-wide">
+                <li><a href="https://github.com/akshayvarma121/Firefly_solver" target="_blank" rel="noreferrer" className="hover:text-signal transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-border rounded-full"></span> GitHub Repository</a></li>
+                <li><a href="https://github.com/akshayvarma121/Firefly_solver/releases" target="_blank" rel="noreferrer" className="hover:text-signal transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-border rounded-full"></span> Release Notes</a></li>
+                <li><a href="#" className="hover:text-signal transition-colors flex items-center gap-2 opacity-50"><span className="w-1 h-1 bg-border rounded-full"></span> Documentation (WIP)</a></li>
+              </ul>
+            </div>
           </div>
           
-          <div className="text-text-muted text-sm font-mono uppercase tracking-widest flex items-center gap-6">
-            <span>The Fireflies</span>
-            <span className="w-1 h-1 rounded-full bg-border"></span>
-            <span>SIH 2026</span>
-          </div>
-          
-          <div className="text-signal font-mono text-sm tracking-widest font-bold">
-            V0.1.0
+          <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-text-muted uppercase tracking-widest">
+            <div>&copy; 2026 The Fireflies // SIH 26119</div>
+            <div className="text-signal font-bold">V0.1.0</div>
           </div>
         </div>
       </footer>
