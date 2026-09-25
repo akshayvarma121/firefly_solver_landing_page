@@ -146,62 +146,69 @@ function App() {
         </section>
 
         {/* THE MATH PIPELINE (New Architecture) */}
-        <section className="border-b border-border flex flex-col lg:flex-row bg-background">
-          <div className="w-full lg:w-1/3 p-6 md:p-12 border-r border-border flex flex-col justify-between">
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.85] mb-12 uppercase">
+        <section className="border-b border-border flex flex-col bg-background">
+          <div className="w-full p-8 md:p-12 lg:p-20 border-b border-border flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.85] uppercase">
               The Math Pipeline
             </h2>
-            <div className="text-lg leading-relaxed font-light text-text-muted">
+            <div className="text-base leading-relaxed font-light text-text-muted max-w-lg">
               From raw MPS constraints to guaranteed optimality. The entire execution path is strictly engineered for massive parallelization.
             </div>
           </div>
-          <div className="w-full lg:w-2/3 p-12 lg:p-24 overflow-x-auto flex items-center bg-panel hide-scrollbar border-l border-border">
-            <div className="flex items-center gap-6 min-w-max pb-4">
+          <div className="w-full p-8 md:p-12 lg:p-20 bg-panel">
+            <div className="w-full flex flex-col xl:flex-row items-center gap-4 xl:gap-8">
               {/* Node 1 */}
-              <div className="w-72 border border-signal bg-background shrink-0 flex flex-col shadow-lg shadow-black/20">
-                <div className="bg-signal text-background font-bold tracking-widest uppercase text-sm p-4 border-b border-signal">
-                  01 // MPS Parsing
+              <div className="flex-1 w-full border border-signal bg-background flex flex-col shadow-lg shadow-black/20 hover:-translate-y-1 transition-transform">
+                <div className="bg-signal text-background font-bold tracking-widest uppercase text-xs md:text-sm p-4 border-b border-signal">
+                  01 // Input
                 </div>
-                <div className="p-8">
+                <div className="p-6 md:p-8">
+                  <h3 className="font-bold text-lg mb-2 uppercase">MPS Parsing</h3>
                   <p className="text-sm text-text-muted leading-relaxed font-light">Industry-standard .mps files are ingested, constructing the initial constraint matrix and objective vectors directly into memory.</p>
                 </div>
               </div>
 
               {/* Arrow */}
-              <div className="text-signal font-mono text-lg animate-pulse-slow">---&gt;</div>
+              <div className="text-signal font-mono text-xl hidden xl:block animate-pulse-slow">---&gt;</div>
+              <div className="text-signal font-mono text-xl xl:hidden rotate-90 py-4 animate-pulse-slow">---&gt;</div>
 
               {/* Node 2 */}
-              <div className="w-72 border border-signal bg-background shrink-0 flex flex-col shadow-lg shadow-black/20">
-                <div className="bg-signal text-background font-bold tracking-widest uppercase text-sm p-4 border-b border-signal">
-                  02 // Presolve
+              <div className="flex-1 w-full border border-signal bg-background flex flex-col shadow-lg shadow-black/20 hover:-translate-y-1 transition-transform">
+                <div className="bg-signal text-background font-bold tracking-widest uppercase text-xs md:text-sm p-4 border-b border-signal">
+                  02 // Reduction
                 </div>
-                <div className="p-8">
+                <div className="p-6 md:p-8">
+                  <h3 className="font-bold text-lg mb-2 uppercase">Presolve Matrix</h3>
                   <p className="text-sm text-text-muted leading-relaxed font-light">Redundant rows and empty columns are systematically stripped out to drastically shrink the dimensionality of the problem.</p>
                 </div>
               </div>
 
               {/* Arrow */}
-              <div className="text-signal font-mono text-lg animate-pulse-slow">---&gt;</div>
+              <div className="text-signal font-mono text-xl hidden xl:block animate-pulse-slow">---&gt;</div>
+              <div className="text-signal font-mono text-xl xl:hidden rotate-90 py-4 animate-pulse-slow">---&gt;</div>
 
               {/* Node 3 */}
-              <div className="w-72 border border-signal bg-background shrink-0 flex flex-col shadow-lg shadow-black/20">
-                <div className="bg-signal text-background font-bold tracking-widest uppercase text-sm p-4 border-b border-signal">
-                  03 // PDHG Engine
+              <div className="flex-1 w-full border border-signal bg-background flex flex-col shadow-lg shadow-black/20 hover:-translate-y-1 transition-transform">
+                <div className="bg-signal text-background font-bold tracking-widest uppercase text-xs md:text-sm p-4 border-b border-signal">
+                  03 // Engine
                 </div>
-                <div className="p-8">
+                <div className="p-6 md:p-8">
+                  <h3 className="font-bold text-lg mb-2 uppercase">PDHG GPU Execution</h3>
                   <p className="text-sm text-text-muted leading-relaxed font-light">Primal-Dual Hybrid Gradient replaces sequential CPU factorizations with massively parallel sparse matrix-vector math.</p>
                 </div>
               </div>
 
               {/* Arrow */}
-              <div className="text-signal font-mono text-lg animate-pulse-slow">---&gt;</div>
+              <div className="text-signal font-mono text-xl hidden xl:block animate-pulse-slow">---&gt;</div>
+              <div className="text-signal font-mono text-xl xl:hidden rotate-90 py-4 animate-pulse-slow">---&gt;</div>
 
               {/* Node 4 */}
-              <div className="w-72 border border-signal bg-background shrink-0 flex flex-col shadow-lg shadow-black/20">
-                <div className="bg-signal text-background font-bold tracking-widest uppercase text-sm p-4 border-b border-signal">
-                  04 // Solution
+              <div className="flex-1 w-full border border-signal bg-background flex flex-col shadow-lg shadow-black/20 hover:-translate-y-1 transition-transform">
+                <div className="bg-signal text-background font-bold tracking-widest uppercase text-xs md:text-sm p-4 border-b border-signal">
+                  04 // Output
                 </div>
-                <div className="p-8">
+                <div className="p-6 md:p-8">
+                  <h3 className="font-bold text-lg mb-2 uppercase">Optimal Solution</h3>
                   <p className="text-sm text-text-muted leading-relaxed font-light">Guaranteed optimality is achieved and exported with mathematically verified primal and dual convergence metrics.</p>
                 </div>
               </div>
