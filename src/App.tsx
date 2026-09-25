@@ -2,8 +2,16 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [mounted, setMounted] = useState(false);
+  const [copied, setCopied] = useState(false);
+  
   useEffect(() => { setMounted(true); }, []);
   if (!mounted) return null;
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText('irm https://bit.ly/install-firefly | iex');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-background text-text-primary selection:bg-signal selection:text-background">
@@ -22,7 +30,11 @@ function App() {
             <a href="#download" className="hover:text-signal transition-colors">Download</a>
           </nav>
           
-          <div className="hidden md:flex">
+          <div className="hidden md:flex items-center gap-4">
+             <a href="https://github.com/akshayvarma121/Firefly_solver" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 border border-border hover:border-signal transition-colors text-xs font-bold tracking-widest text-text-primary uppercase group">
+               <svg className="w-4 h-4 group-hover:text-signal transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+               STAR ON GITHUB
+             </a>
              <span className="px-4 py-2 border border-border text-xs font-mono tracking-widest text-text-muted">v0.1.0</span>
           </div>
         </div>
@@ -127,6 +139,58 @@ function App() {
                   <p className="text-sm text-text-muted leading-relaxed font-light">Built with a clean three-tier architecture, making it incredibly easy to add new features or integrate with your existing tools.</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CAPABILITIES & API */}
+        <section className="flex flex-col lg:flex-row border-b border-border">
+          {/* Capabilities */}
+          <div className="w-full lg:w-1/2 p-6 md:p-12 lg:p-20 border-r border-border flex flex-col bg-background">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter uppercase mb-12">Mathematical Capabilities</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 flex-grow">
+              <div className="p-6 border border-border bg-panel flex flex-col justify-between hover:border-signal transition-colors group">
+                <div className="font-mono text-signal text-xl font-bold mb-4">LP</div>
+                <div className="font-bold uppercase tracking-widest text-sm group-hover:text-signal transition-colors">Linear<br/>Programming</div>
+              </div>
+              <div className="p-6 border border-border bg-panel flex flex-col justify-between hover:border-signal transition-colors group">
+                <div className="font-mono text-signal text-xl font-bold mb-4">MILP</div>
+                <div className="font-bold uppercase tracking-widest text-sm group-hover:text-signal transition-colors">Mixed-Integer<br/>Linear</div>
+              </div>
+              <div className="p-6 border border-border bg-panel flex flex-col justify-between relative overflow-hidden group">
+                <div className="absolute top-0 right-0 bg-signal text-background text-[10px] font-bold px-3 py-1 uppercase tracking-widest">In Dev</div>
+                <div className="font-mono text-trace-secondary text-xl font-bold mb-4 opacity-50">QP</div>
+                <div className="font-bold uppercase tracking-widest text-sm opacity-50">Quadratic<br/>Programming</div>
+              </div>
+              <div className="p-6 border border-border bg-panel flex flex-col justify-between group">
+                <div className="font-mono text-text-primary text-xl font-bold mb-4">.MPS</div>
+                <div className="font-bold uppercase tracking-widest text-sm text-text-muted">Industry Standard<br/>Parsing</div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Python API */}
+          <div className="w-full lg:w-1/2 p-6 md:p-12 lg:p-20 flex flex-col bg-panel">
+            <div className="flex justify-between items-end mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter uppercase">Python API</h2>
+              <span className="font-mono text-xs text-text-muted uppercase tracking-widest hidden sm:block">import firefly</span>
+            </div>
+            <p className="text-text-muted font-light leading-relaxed mb-8">
+              Despite the complex GPU architecture under the hood, solving your models takes just three lines of Python.
+            </p>
+            <div className="bg-background border border-border p-6 relative group overflow-x-auto">
+              <div className="absolute top-0 left-0 w-1 h-full bg-signal"></div>
+              <pre className="font-mono text-sm md:text-base leading-[2.5] text-text-muted">
+<span className="text-trace-secondary">import</span> firefly<br/>
+<br/>
+<span className="text-text-muted opacity-50"># Initialize the solver with GPU acceleration</span><br/>
+solver = firefly.Solver(gpu=<span className="text-signal">True</span>)<br/>
+<br/>
+<span className="text-text-muted opacity-50"># Solve an industry-standard MPS file</span><br/>
+result = solver.solve(<span className="text-trace-secondary">"data/model.mps"</span>)<br/>
+<br/>
+<span className="text-trace-secondary">print</span>(<span className="text-signal">f"Optimal Value: {"{"}result.objective_value{"}"}"</span>)
+              </pre>
             </div>
           </div>
         </section>
@@ -242,10 +306,12 @@ function App() {
             
             <div className="mb-12">
               <p className="font-mono text-xs tracking-widest text-text-muted mb-4 uppercase">Quick Install</p>
-              <div className="bg-background border border-border p-4 flex justify-between items-center cursor-pointer hover:border-signal transition-colors"
-                   onClick={() => navigator.clipboard.writeText('irm https://bit.ly/install-firefly | iex')}>
+              <div className="bg-background border border-border p-4 flex justify-between items-center cursor-pointer hover:border-signal transition-colors group"
+                   onClick={handleCopy}>
                 <code className="text-signal font-mono text-sm">irm https://bit.ly/install-firefly | iex</code>
-                <span className="font-mono text-xs text-text-muted uppercase">COPY</span>
+                <span className={`font-mono text-xs font-bold uppercase transition-colors ${copied ? 'text-signal' : 'text-text-muted group-hover:text-text-primary'}`}>
+                  {copied ? 'COPIED!' : 'COPY'}
+                </span>
               </div>
             </div>
 
